@@ -867,6 +867,8 @@ nav>ul>li:hover a+.mega-menu {
 .testimonials {
     background-color: #ECECEC;
     position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .testimonials::before {
@@ -885,6 +887,8 @@ nav>ul>li:hover a+.mega-menu {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
+    padding: 0 20px;
+    margin-top: 40px;
 }
 
 .testimonials-boxes .box {
@@ -892,22 +896,32 @@ nav>ul>li:hover a+.mega-menu {
     border-radius: 15px;
     padding: 20px;
     position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials-boxes .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .testimonials-boxes .box img {
     position: absolute;
-    border-radius: 50%;
     width: 100px;
     height: 100px;
-    right: -20px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
     top: -20px;
+    right: -20px;
     background-color: #ECECEC;
     border: 10px solid var(--section-background);
 }
 
 .testimonials-boxes .box h2 {
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #333;
 }
 
 .testimonials-boxes .box p:first-of-type {
@@ -916,7 +930,8 @@ nav>ul>li:hover a+.mega-menu {
     color: #777;
 }
 
-.testimonials-boxes .box i.filled {
+.testimonials-boxes .box .rate i {
+    font-size: 1.2rem;
     color: #FFC107;
 }
 
@@ -925,6 +940,38 @@ nav>ul>li:hover a+.mega-menu {
     font-size: 1rem;
     color: #777;
     line-height: 1.6;
+}
+
+/* End Testimonials */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials-boxes {
+        grid-template-columns: 1fr;
+        /* عرض عنصر واحد في كل صف */
+        gap: 20px;
+        /* تقليل المسافة بين العناصر */
+    }
+
+    .testimonials-boxes .box {
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    .testimonials-boxes .box h2 {
+        font-size: 1.1rem;
+        /* تقليل حجم العنوان */
+    }
+
+    .testimonials-boxes .box p {
+        font-size: 0.9rem;
+        /* تقليل حجم النص */
+    }
+
+    .rate i {
+        font-size: 1rem;
+        /* تصغير حجم النجوم */
+    }
 }
 
 /* End Testimonials */
